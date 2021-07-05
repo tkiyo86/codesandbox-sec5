@@ -8,13 +8,13 @@
   <body>
     <!-- 30.表示エリアが3つあるのでdivを３つ準備する  -->
     <!-- 31.divのクラス名を作りそれに対応するCSSを作成する  -->
+    <!-- 32.追加ボダン機能をJSで実装する、完了／削除ボタンも同じ  -->
     <div class="input-area">
-      <input placeholder="TODOを入力" />
-      <button>追加</button>
+      <input id="add-text" placeholder="TODOを入力" />
+      <button id="add-button">追加</button>
     </div>
-    <!-- 
-    <div>
-      <p>未完了のTODO</p>
+    <!--
+    <div class="incomplete-area">
       <ul>
         <div>
           <li>TODOです</li>
@@ -52,7 +52,6 @@
         </div>
       </ul>
     </div>
-
-    <script src="src/index.js"></script>
+    <script src="./src/index.js"></script>
   </body>
 </html>
