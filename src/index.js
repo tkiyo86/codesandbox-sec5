@@ -4,7 +4,7 @@ import "./styles.css";
  * 追加ボタンで「未完了ToDOにリストを反映する機能」
  */
 
-/** 
+/**
  * ----------------------------------------------------
  * 1,最初からすべてを実装しない、まずはアラート
  * htmlのbuttonにid=add-button を割り当てる
@@ -16,8 +16,8 @@ const onClickAdd = () => {
 
 document
   .getElementById("add-button")
-  .addEventListener("click",() => onClickAdd());
-*/
+  .addEventListener("click", () => onClickAdd());
+ */
 
 /**
  * ----------------------------------------------------
@@ -36,8 +36,7 @@ document
   .getElementById("add-button")
   .addEventListener("click", () => onClickAdd());
 
-  
- *  */
+ */
 
 /**
  * ----------------------------------------------------
@@ -47,9 +46,10 @@ document
  */
 
 const onClickAdd = () => {
-  // テキストボックスの値を取得し、初期化する
+  // テキストボックスの値valueを取得し、初期化する
   const inputText = document.getElementById("add-text").value;
   document.getElementById("add-text").value = "";
+  alert(inputText); //入力内容を表示する
 
   // div生成,　HTML上でDOMを作成できる（createElement）
   // JS上の変数に格納する
@@ -59,9 +59,9 @@ const onClickAdd = () => {
   console.log(div); // <div class="list-row"></div>　が表示されるはず
 
   // liタグ作成
-  //const li = document.createElement("li");
-  //li.interText = inputText;
-  //console.log(li);
+  const li = document.createElement("li");
+  li.interText = inputText;
+  console.log(li);
 };
 
 document
