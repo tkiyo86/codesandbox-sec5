@@ -63,9 +63,27 @@ const onClickAdd = () => {
   li.innerText = inputText;
   //console.log(li);
 
+  //34,bottonタグ生成
+  const completeButton = document.createElement("button");
+  completeButton.innerText = "完了";
+  //34-2、イベントを追加する
+  completeButton.addEventListener("click", () => {
+    alert("完了");
+  });
+
+  //34,botton削除タグ生成
+  const deleteButton = document.createElement("button");
+  deleteButton.innerText = "削除";
+  //34-2、イベントを追加する
+  deleteButton.addEventListener("click", () => {
+    alert("削除");
+  });
+
   // divタグの子要素に各要素を設定,HTMLをよく見る
   div.appendChild(li);
-  console.log(div);
+  div.appendChild(completeButton); // 34完了ボタン
+  div.appendChild(deleteButton); // 34削除ボタン
+  //console.log(div);
 
   /**
    * こんな感じでConsoleに表示されるはず
