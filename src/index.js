@@ -84,6 +84,10 @@ const onClickAdd = () => {
 
     const backButton = document.createElement("button");
     backButton.innerText = "戻す";
+    backButton.addEventListener("click", () => {
+      // 削除する、親タグを削除する
+
+    }
 
     //divタグの子要素に各様を設定する
     addTarget.appendChild(li);
@@ -119,6 +123,22 @@ const onClickAdd = () => {
     const deleteTarget = deleteButton.parentNode;
     document.getElementById("incomplete-list").removeChild(target);
   };
+
+  // 未完了リストにテキスト＋ボタンを追加する関数
+  const createIncompleteList = (inputText) => {
+    const div = document.createElement("div");
+    div.className = "list-row";
+    const li = document.createElement("li");
+    li.innerText = inputText;
+    const completeButton = document.createElement("button");
+    completeButton.innerText = "完了";
+    const deleteButton = document.createElement("button");
+    deleteButton.innerText = "削除";
+    div.appendChild(li);
+    div.appendChild(completeButton); // 34完了ボタン
+    div.appendChild(deleteButton); // 34削除ボタン
+    document.getElementById("incomplete-list").appendChild(div);
+  }
 
   // divタグの子要素に各要素を設定,HTMLをよく見る
   div.appendChild(li);
