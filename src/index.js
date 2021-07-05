@@ -63,20 +63,28 @@ const onClickAdd = () => {
   li.innerText = inputText;
   //console.log(li);
 
-  //34,bottonタグ生成
+  //33,bottonタグ生成
   const completeButton = document.createElement("button");
   completeButton.innerText = "完了";
-  //34-2、イベントを追加する
+  //33-2、イベントを追加する
   completeButton.addEventListener("click", () => {
     alert("完了");
   });
 
-  //34,botton削除タグ生成
+  //33,botton削除タグ生成
   const deleteButton = document.createElement("button");
   deleteButton.innerText = "削除";
-  //34-2、イベントを追加する
+  //33-2、イベントを追加する
   deleteButton.addEventListener("click", () => {
-    alert("削除");
+    //alert("削除");
+
+    //34 削除ボタンを押すとHTMLのdivをまるごと削除したい
+    // 押された削除ボタンの親タグ（div）を未完了リストから削除
+
+    // divを取得,parentNode
+    const deleteTarget = deleteButton.parentNode;
+    // 取得したdivをincompletelistから削除する
+    document.getElementById("incomplete-list").removeChild(deleteTarget);
   });
 
   // divタグの子要素に各要素を設定,HTMLをよく見る
