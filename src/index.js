@@ -85,9 +85,16 @@ const onClickAdd = () => {
     const backButton = document.createElement("button");
     backButton.innerText = "戻す";
     backButton.addEventListener("click", () => {
-      // 削除する、親タグを削除する
+      // 削除する、親タグ（div）を削除する
+      const deleteTarget = backButton.parentNode;
+      document.getElementById("complete-list").removeChild(deleteTarget);
 
-    }
+      // 削除したdivからテキストを取得
+      const text = backButton.parentNode.firstChild.innerText;
+
+      createIncompleteList(text);
+      //console.log(text);
+    });
 
     //divタグの子要素に各様を設定する
     addTarget.appendChild(li);
@@ -138,21 +145,13 @@ const onClickAdd = () => {
     div.appendChild(completeButton); // 34完了ボタン
     div.appendChild(deleteButton); // 34削除ボタン
     document.getElementById("incomplete-list").appendChild(div);
-  }
+  };
 
   // divタグの子要素に各要素を設定,HTMLをよく見る
   div.appendChild(li);
   div.appendChild(completeButton); // 34完了ボタン
   div.appendChild(deleteButton); // 34削除ボタン
   //console.log(div);
-
-  /**
-   * こんな感じでConsoleに表示されるはず
-   * inputTextがliに格納されて、divタグの中にliが含まれる形に
-<div class="list-row">
-<li>aaa</li>
-</div>
-   */
 
   //　ここまでできたらHTMLを再度見る、<ul>に格納する
 
